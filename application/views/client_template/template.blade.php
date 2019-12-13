@@ -2,8 +2,5 @@
 @include('client_template/main_banner')
 @include('client_template/menu_header')
 @include('client_template/content')
-@include('client_template/main_service')
-@include('client_template/main_about')
-@include('client_template/main_news')
 @include('client_template/footer')
 @include('client_template/js_main')

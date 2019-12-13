@@ -120,10 +120,9 @@ class M_kontak extends CI_Model {
     }
 
     //update
-    public function update($table, $params, $where)
+    public function update($table, $params)
     {
       $this->db->set($params);
-      $this->db->where($where);
       return $this->db->update($table);
     }
   

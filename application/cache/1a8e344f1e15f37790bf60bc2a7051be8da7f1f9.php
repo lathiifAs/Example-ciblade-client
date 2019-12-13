@@ -6,7 +6,7 @@
                 <div class="col-lg-8 p-0">
                     <div class="page-header">
                         <div class="page-title">
-                            <h1>{{ $title }}</h1>
+                            <h1><?php echo e($title); ?></h1>
                         </div>
                     </div>
                 </div>
@@ -32,14 +32,14 @@
                                     <h4>Edit Kontak</h4>
                                     <div class="card-header-right-icon">
                                         <ul>
-                                            <a href="{{ site_url('master/user') }}" type="button"
+                                            <a href="<?php echo e(site_url('master/user')); ?>" type="button"
                                                 class="btn btn-default m-b-10 m-l-5">Kembali</a>
                                         </ul>
                                     </div>
                                 </div>
 
-                                {{-- notif --}}
-                                @include('template/notif')
+                                
+                                <?php echo $__env->make('template/notif', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 
                                 <hr>
                                 <div class="card-body" style="margin-top:20px">
@@ -47,27 +47,27 @@
                                         <div class="main">
                                             <div class="horizontal-form-elements">
                                                 <form class="form-horizontal"
-                                                    action="{{ site_url('setclient/contact/edit_process') }}" method="post">
+                                                    action="<?php echo e(site_url('setclient/contact/edit_process')); ?>" method="post">
                                                     <div class="row">
                                                         <div class="col-lg-6">
                                                             <div class="form-group">
                                                                 <label class="col-sm-2 control-label">Telephone</label>
                                                                 <div class="col-sm-10">
-                                                                    <input type="text" name="telephone" class="form-control" value="{{ $result['telephone'] }}"
+                                                                    <input type="text" name="telephone" class="form-control" value="<?php echo e($result['telephone']); ?>"
                                                                         placeholder="Nomor Telephone...">
                                                                 </div>
                                                             </div>
                                                             <div class="form-group">
                                                                 <label class="col-sm-2 control-label">Whatsapp</label>
                                                                 <div class="col-sm-10">
-                                                                    <input type="text" name="no_whatsapp" class="form-control" value="{{ $result['no_whatsapp'] }}"
+                                                                    <input type="text" name="no_whatsapp" class="form-control" value="<?php echo e($result['no_whatsapp']); ?>"
                                                                         placeholder="Nomor Whatsapp...">
                                                                 </div>
                                                             </div>
                                                             <div class="form-group">
                                                                 <label class="col-sm-2 control-label">Fanpage Facebook</label>
                                                                 <div class="col-sm-10">
-                                                                    <input type="text" name="fanpage_fb" class="form-control" value="{{ $result['fanpage_fb'] }}"
+                                                                    <input type="text" name="fanpage_fb" class="form-control" value="<?php echo e($result['fanpage_fb']); ?>"
                                                                         placeholder="Akun Fanpage...">
                                                                 </div>
                                                             </div>
@@ -76,7 +76,7 @@
                                                             <div class="form-group">
                                                                 <label class="col-sm-2 control-label">Email</label>
                                                                 <div class="col-sm-10">
-                                                                    <input type="text" name="email" value="{{ $result['email'] }}"
+                                                                    <input type="text" name="email" value="<?php echo e($result['email']); ?>"
                                                                         class="form-control"
                                                                         placeholder="Isian email...">
                                                                 </div>
@@ -85,7 +85,7 @@
                                                                 <label class="col-sm-2 control-label">Alamat</label>
                                                                 <div class="col-sm-10">
                                                                     <textarea rows="5" cols="50" class="col-sm-12" name="alamat"
-                                                                        placeholder="Alamat lengkap...">{{ $result['alamat'] }}</textarea>
+                                                                        placeholder="Alamat lengkap..."><?php echo e($result['alamat']); ?></textarea>
                                                                 </div>
                                                             </div>
                                                         </div>
