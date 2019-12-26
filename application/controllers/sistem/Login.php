@@ -129,7 +129,7 @@ class Login extends MY_Controller{
     public function logout()
     {
         // set session
-        $this->session->unset_userdata();
+        $this->session->sess_destroy();
         redirect('sistem/login');
     }
 
